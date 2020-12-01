@@ -3,7 +3,7 @@
 SET(GDNSOUT "${PROJECT_SOURCE_DIR}/../gdns/")
 SET(PROJLIB "lib${ProjectId}.gdnlib")
 SET(CLASSNAME )
-SUBDIRS(subdirs ${PROJECT_SOURCE_DIR})
+SUBDIRS(subdirs ${PROJECT_SOURCE_DIR}/src)
 FOREACH(subdir ${subdirs})
     SET(CLASSNAME ${subdir})
     CONFIGURE_FILE (

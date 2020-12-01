@@ -14,7 +14,7 @@
 #include <Spatial.hpp>
 #include <Viewport.hpp>
 
-#include <gdregistry/gdregistry.hpp>
+#include <gdregistry.hpp>
 #include <gdutil.hpp>
 
 #include "g3dcam.hpp"

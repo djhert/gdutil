@@ -10,7 +10,7 @@
 
 #include <iostream>
 
-#include <gdregistry/gdregistry.hpp>
+#include <gdregistry.hpp>
 #include <gdutil.hpp>
 
 namespace godot {

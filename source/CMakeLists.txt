@@ -32,11 +32,10 @@ SET(CMAKE_PDB_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}")
 SET(LIBL_FLAGS )
 
 # Find all source files in source dir
-FILE(GLOB_RECURSE LIBSOURCES ${PROJECT_SOURCE_DIR}/*.c**)
-FILE(GLOB_RECURSE LIBHEADERS ${PROJECT_SOURCE_DIR}/*.h**)
+FILE(GLOB_RECURSE LIBSOURCES ${PROJECT_SOURCE_DIR}/src/*.c**)
 
 # Define library
-ADD_LIBRARY(${LibName} STATIC ${LIBSOURCES} ${LIBHEADERS})
+ADD_LIBRARY(${LibName} STATIC ${LIBSOURCES})
 ADD_DEPENDENCIES(${LibName} godot-cpp)
 ADD_DEPENDENCIES(${LibName} gdregistry)
 
@@ -52,12 +51,9 @@ endif()
 # Include godot-cpp and other needed stuff
 TARGET_INCLUDE_DIRECTORIES(${LibName}
   PUBLIC
-  ${PROJECT_SOURCE_DIR}
-  ${SourceDir}/include
-  ${SourceDir}/include/godot-cpp/include
-  ${SourceDir}/include/godot-cpp/include/core
-  ${SourceDir}/include/godot-cpp/include/gen
-  ${VERSIONS_DIR}
+  ${PROJECT_SOURCE_DIR}/include
+  ${SourceDir}/include/gdregistry/include
+  ${PROJECT_INCLUDES}
 )
 
 # Include godot_headers and ignore any warnings
@@ -72,7 +68,7 @@ SET_PROPERTY(TARGET ${LibName} APPEND_STRING PROPERTY LINK_FLAGS ${LIBL_FLAGS})
 # Add this to the main target
 TARGET_INCLUDE_DIRECTORIES(${ProjectId}
    PUBLIC
-  ${PROJECT_SOURCE_DIR}
+  ${PROJECT_SOURCE_DIR}/include
 )
 
 # Add this as a dependency of the main project

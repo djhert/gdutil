@@ -4,7 +4,7 @@
 #include <Camera.hpp>
 #include <Godot.hpp>
 
-#include <gdregistry/gdregistry.hpp>
+#include <gdregistry.hpp>
 #include <gdutil.hpp>
 
 #include "g3dbody.hpp"

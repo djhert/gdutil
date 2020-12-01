@@ -1,7 +1,7 @@
 #ifndef _GDISPLAY_H_
 #define _GDISPLAY_H_
 
-#include <gdregistry/gdregistry.hpp>
+#include <gdregistry.hpp>
 
 #include <CanvasLayer.hpp>
 
